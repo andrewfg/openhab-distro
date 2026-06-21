@@ -212,6 +212,9 @@
         <artifactId>karaf-maven-plugin</artifactId>
         <configuration>
           <javase>${oh.java.version}</javase>
+          <startupBundles>
+            <bundle>mvn:org.openhab.core.bundles/org.openhab.core.paxlogging/5.2.0-SNAPSHOT;start-level=7</bundle>
+          </startupBundles>
           <installedFeatures>
             <feature>wrapper</feature>
             <feature>wrap</feature>
@@ -219,9 +222,6 @@
           <startupFeatures>
             <feature>eventadmin</feature>
           </startupFeatures>
-          <startupBundles>
-            <bundle>mvn:org.openhab.core.bundles/org.openhab.core.paxlogging/5.2.0-SNAPSHOT;start-level=8</bundle>
-          </startupBundles>
           <bootFeatures>
             <feature>jaas</feature>
             <feature>shell</feature>
