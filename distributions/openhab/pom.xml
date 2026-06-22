@@ -102,32 +102,6 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-custom-paxlogging-fragment</id>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <phase>prepare-package</phase>
-            <configuration>
-              <!-- Direct the output straight into the target assembly's system path -->
-              <outputDirectory>${project.build.directory}/assembly/system/org/openhab/core/bundles/org.openhab.core.paxlogging/${project.version}</outputDirectory>
-              <resources>
-                <resource>
-                  <!-- Fetch freshly built artifact directly from your .m2 storage -->
-                  <directory>${settings.localRepository}/org/openhab/core/bundles/org.openhab.core.paxlogging/${project.version}</directory>
-                  <includes>
-                    <include>org.openhab.core.paxlogging-${project.version}.jar</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <version>3.11.0</version>
         <executions>
