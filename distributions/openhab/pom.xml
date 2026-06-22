@@ -100,6 +100,27 @@
     </pluginManagement>
 
     <plugins>
+     <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+        <version>${karaf.version}</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>process-resources</id>
+            <goals>
+              <goal>assembly</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <filterResourceProperties>true</filterResourceProperties>
+              <startupProperties>
+                <propertyFile>${project.basedir}/src/main/resources/etc/common-startup.properties</propertyFile>
+              </startupProperties>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
