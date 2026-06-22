@@ -212,13 +212,6 @@
         <artifactId>karaf-maven-plugin</artifactId>
         <configuration>
           <javase>${oh.java.version}</javase>
-          <startupBundles>
-            <bundle>mvn:org.openhab.core.bundles/org.openhab.core.paxlogging/5.2.0-SNAPSHOT;start-level=7</bundle>
-          </startupBundles>
-          <systemProperties>
-            <org.osgi.framework.bootdelegation>${org.osgi.framework.bootdelegation},org.openhab.core.paxlogging,org.ops4j.pax.logging.log4j2.internal</org.osgi.framework.bootdelegation>
-            <org.osgi.framework.system.packages.extra>${org.osgi.framework.system.packages.extra},org.ops4j.pax.logging.log4j2.internal</org.osgi.framework.system.packages.extra>
-          </systemProperties>
           <installedFeatures>
             <feature>wrapper</feature>
             <feature>wrap</feature>
